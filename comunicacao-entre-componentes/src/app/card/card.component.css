@@ -1,0 +1,66 @@
+/*AULA 17 DE OUT DE 2022*/
+.card {
+    width: 300px;
+    display:flex;
+    flex-direction: column;
+    box-shadow: 5px 0 5px #0000002a, -5px 0 5px #0000002a, 0px 5px 5px #0000002a, 0px -5px 5px #0000002a;
+    box-sizing: content-box;
+}
+
+.card-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover; /*faz o mesmo trabalho de background-size*/
+}
+
+.card-content {
+    padding:25px 20px;
+    box-sizing: border-box;
+}
+
+.card-title {
+    font-size: 20px;
+    max-width: 230px;
+    font-weight: 700;
+}
+
+.card-author {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    color: #aaaaaa;
+}
+
+.card-author p {
+    margin:0;
+    text-transform: uppercase; /*todo o texto vai ficar maíusculo*/
+    letter-spacing: 1px; /*espaçamento entre as letras*/
+} /*modifica individualmente cada tag, nesse caso <p>*/
+
+.author {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-right: 5px;
+}
+
+.card-footer {
+    margin-top: 20px;
+}
+
+.card-footer button {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 2px;
+    height: 35px;
+    background-color: black;
+    font-size: 13px;
+    color: white;
+    text-align: start;
+    padding: 0px 35px;
+    box-shadow: 4px 0 4px #0000002a;
+    cursor: pointer;
+}

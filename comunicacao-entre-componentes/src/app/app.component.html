@@ -1,0 +1,25 @@
+<!--AULA DIA 17 DE OUT 2022-->
+<!--INPUT BINDING
+Alterar de forma externa a classes as propriedades
+-->
+<app-card titulo="Paros, Greece" corBtn="green"></app-card>
+<!--<app-card></app-card>
+<app-card></app-card> = vai repetir sempre os cards, não tem dinamicidade -->
+
+<!--DINAMICIDADE
+você pode alterar os valores agora, sem ficar repetidos
+-->
+<app-card banner="https://images.unsplash.com/photo-1659349926950-f8202bab86b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" titulo="Barbaros, Pergé, Perge Yolu, Aksu/Antalya, Turkey" userName="Yana Marudova"
+userFoto="https://cdn.dribbble.com/users/985453/avatars/normal/fa2b682c4185c58d47bd5addace20543.jpg?1446203176"></app-card>
+<!--só adc a variável que vc for alterar-->
+
+<app-uploader (uploadCompleto)="mostrarMsg()"></app-uploader>
+<!--vai aparecer o status do upload-->
+
+<!--escolher o arquivo  no console -->
+<input type="file" #inputFile> <!--Variáveis de Template (Template Variables) = permite criar variaveis dentro do HTML
+a # qualquer nome que quiser = como se tivesse feito todo aquele procedimento em JS (getElementbyID, const, let ou var). Permite acessar várias formas de arquivos-->
+
+<!--Ao clicar no botão, deseja executar o método clickparanteses do input file-->
+<button id="btn" (click)="inputFile.click()">Selecionar arquivo</button>
+<!--elemento recuperado para usar no button-->

@@ -1,0 +1,51 @@
+<!-- AULA DO DIA 13 DE OUT DE 2022 -->
+
+<!--ao por o nome da variavel em ty ele vai por no site em html, dentro do chaves debe por as propriedades dentro do typescript, incorporaçãp dp ty no body-->
+
+<p>{{ title }}</p> <!--tudo que escrever dentro desse par de chaves vai ser lido em typescript: criar expressões lógicas, classes, funções etc--> 
+
+<p>{{ 11 * 5 }}</p> 
+
+<p>O resultado da soma de 20 + 10 é {{somar(20,10)}}</p> 
+<!--Ele vai pegar o valor, fazer o calculo e retornar. De forma mais simples sem precisar puxar elementos, etc, dentro do angular não vai precisar usar o DOM js--> 
+
+<!--PROPERTY BINDING-->
+
+<!--colchetes em type = [type] = vai entender como código ty-->
+<input [type]="tipoInput" [value]="inputData">
+
+<br> <!--tentar mudar o tipo de input, utilizando a forma do Angular--> 
+
+<!--botão do olhinho que mostra e esconder a senha-->
+<button (click)="mudarTipoDoInput()">Mostrar a senha</button>
+
+  <!--dentro do botão em parentese é mostrando que vc quer usar oevento de click--> 
+  <!--tem que abrir e fechar paranteses no metodo para ele pode ser executado, caso não ponha vai ser "referencia do metodo"--> 
+
+  <!--TWO WAY DATA BINDING
+  O usuário vai interagir com seu site e o valor de suas propriedades vão mudando conforme a interação com o usuário
+  -->
+  <!--FAZER DOIS INPUT DENTRO DO HTML
+  
+  ir no app.module.ts = importar os módulos
+  -->
+  <br>
+  
+  <input type="number" placeholder="Digite o 1º número" [(ngModel)]="num1" name="valor1">  <!--linkar no ty, tipo um binding--> 
+  
+  <p>+</p>
+  
+  <br>
+  
+  <input type="number" placeholder="Digite o 2º número" [(ngModel)]="num2" name="valor2">
+  
+  <p> <!--string interpolation-->
+    {{num1}} + {{num2}} = {{num1 + num2}}<!--vaimudar de acordo que o usuário for pondo-->
+  </p>
+
+  <!--EXERCICIO DO DIA 13 DE OUT
+  Fazer um contador em que tenha um botão que adiciona e diminui um numero
+  -->
+
+
+

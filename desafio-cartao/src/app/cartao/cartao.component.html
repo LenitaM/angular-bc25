@@ -1,0 +1,30 @@
+<div class="wrapper">
+    <div class="credit-card-front">
+        <div class="credit-card-logo">
+            <img src="\assets\icons8-mastercard-50.png" alt="Mastercard Logo">
+        </div>
+        <div class="credit-card-number">
+            <strong>
+                {{dadosCartao.numero || "0000 0000 0000 0000"}} <!--enquando tiver vazio ele vai preencher com 0000 0000 0000 0000-->
+            </strong> <!--String vazia em TS é considerado false-->
+            <!--interpolation -->
+        </div>
+        <div class="credit-card-data">
+            <p class="name">
+                {{dadosCartao.nome || "Seu nome completo, como mostrado no cartão"}} 
+            </p>
+            <strong class="expiration-date">
+                {{dadosCartao.mes}}/{{dadosCartao.ano}}
+            </strong>
+        </div>
+    </div>
+
+    <div class="credit-card-back">
+        <div class="line"></div>
+        <div class="cvc">
+            <strong>
+                {{dadosCartao.cvc || "Código de Segurança do cartão"}}
+            </strong>
+        </div>
+    </div>
+</div>

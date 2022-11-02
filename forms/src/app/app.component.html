@@ -1,0 +1,92 @@
+<!--AULA DIA 25 DE OUT DE 2022: FORMS E ESTILIZAÇÃO PELO MATERIAL ANGULAR-->
+
+<div class="flex">
+  <mat-card class="card-form">
+    <!--aumentando o mat card-->
+
+    <mat-card-title>
+      <!--vc trabalha com componentes, o que facilita, não precisa trabaçhar com tantas class-->
+      Cadastro de Usuários
+    </mat-card-title>
+
+    <mat-card-content>
+      <!--linkando as propriedades do ts ao html-->
+
+      <!--
+        -> Informar que o formulário será validado pelo Template Driven Forms
+          
+        -> 'ngForm' informa que o o formulário utilizará o método de validação
+          do Template Driven Forms
+-->
+      <form action="#" #userForm="ngForm">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Nome</mat-label>
+          <!--precisa ter obrigatóriamente o atríbuto name. Template Driver [(mgModel)]-->
+          <input type="text" matInput [(ngModel)]="dadosUsuario.nome" name="nome" required minlength="4"
+            #inputNome="ngModel">
+          <!--(Event binding = ouvir um evento ) [Property binding = dentro de uma propriedade dentro de um atributo html linkar um valor de uma propriedade no componente. Ex: retorna de uma função, vai como valor para um atributo do html]  [(ngModel são os dois ao mesmo tempo / toda vez que mgModel estánesse formato, ele vai mandar o valor guardado dentro do input e guardar dentro de uma propriedade do componente)] = "propriedade do componente para linkar ao input e ir para dentro da propriedade declarada"-->
+
+          <mat-error>
+            <!--
+              o método getError informa se o problema de validação
+              está vindo de algum atributo de validação em específico -->
+
+            <span *ngIf="inputNome.getError('required')">Este campo é obrigatório</span>
+            <span *ngIf="inputNome.getError('minlength')">Este campo precisa possuir 4 caracteres, no mínimo.</span>
+          </mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Sobrenome</mat-label>
+          <input type="text" matInput [(ngModel)]="dadosUsuario.sobrenome" name="sobrenome" required minlength="4"
+            #inputSobrenome="ngModel">
+          <mat-error>
+            <span *ngIf="inputNome.getError('required')">Este campo é obrigatório</span>
+            <span *ngIf="inputNome.getError('minlength')">Este campo precisa possuir 4 caracteres, no mínimo.</span>
+          </mat-error> <!--serve para mostrar mensagens de erro-->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input 
+          type="text" matInput [(ngModel)]="dadosUsuario.email" 
+          name="email" 
+          required 
+          email
+          #inputEmail="ngModel">
+          <!--nome da variavel de template, da pra fazer uma validação mais individual de cada input -->
+          <mat-error>
+            <span *ngIf="inputNome.getError('required')">Este campo é obrigatório</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+          <input 
+          type="password" 
+          matInput [(ngModel)]="dadosUsuario.senha" n
+          ame="senha" required 
+          minlength="8"
+          #inputSenha="ngModel"
+          >
+          <mat-error>
+            <span *ngIf="inputNome.getError('required')">Este campo é obrigatório</span>
+            <!--informa onde ta o erro, vou especifica onde quer ver o erro-->
+            <span *ngIf="inputNome.getError('minlength')">Este campo precisa possuir 8 caracteres, no mínimo.</span>
+          </mat-error>
+        </mat-form-field>
+
+        <button 
+        type="submit" 
+        mat-raised-button color="primary" 
+        [disabled]="userForm.invalid">Cadastrar</button>
+        <!-- [disabled] = o button só fica roxinha se todas os compos condizer com as condições do forumlario-->
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+<!--Two-way binding oferece aos componentes em seu aplicativo uma maneira de compartilhar dados. Use a associação bidirecional para ouvir eventos e atualizar valores simultaneamente entre componentes pai e filho.-->
+<app-reactive></app-reactive>

@@ -1,0 +1,28 @@
+<!--AULA 17 DE OUT DE 2022-->
+<div class="card">
+    <!--colocando as propriedades do ts, chamado de data binding usando colchetes no atríbutos do html-->
+    <img [src]="banner"  alt="Paros, Greece" class="card-img"/> <!--img tranferida para ts-->
+
+<div class="card-content">
+    <!--String interpolation-->
+    <p class="card-title" >
+        {{titulo}}
+   <!--tranferido para ts-->
+    </p>
+
+    <div class="card-author">
+        <img [src]="userFoto" alt="" class="author"> <!--imagem transferida para ts-->
+        <p>
+            <strong>
+                <!--String Interpolation-->
+                {{userName}}
+                <!--transferido para ts-->
+            </strong>
+        </p>
+    </div>
+    <div class="card-footer">
+        <!--Gambiarra-->
+        <button class="read-more" [style]=" 'background-color: ' + corBtn + ';' ">Ler mais</button>
+      </div>
+</div>
+</div>
